@@ -1,105 +1,83 @@
-		<%- include("partials/header"); -%>
-
-<!-- END nav -->
-
-<section class="hero-wrap hero-wrap-2" style="background-image: url('/static/user/images/malinova_30.jpg');" data-stellar-background-ratio="0.5">
-  <div class="overlay"></div>
-  <div class="container">
-    <div class="row no-gutters slider-text align-items-end justify-content-start">
-      <div class="col-md-9 ftco-animate pb-5">
-       <p class="breadcrumbs"><span class="mr-2"><a href="/">Accueil <i class="fa fa-chevron-right"></i></a></span> </span></p>
-       <!-- <span>Contactez Nous <i class="fa fa-chevron-right"></i> -->
-       <h1 class="mb-3 bread">Contactez Nous</h1>
-     </div>
-   </div>
- </div>
-</section>
-
-<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-  <div class="container">
-   <div class="row justify-content-center mb-5 pb-3">
-    <div class="col-md-7 heading-section text-center ftco-animate">
-      <!-- <span class="subheading">Contactez Nous</span> -->
-      <h3 style="text-transform: uppercase; ">Nous sommes disponibles 24/7 pour satisfaire à vos besions.</h3>
-      <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p> -->
+<%- include("partials/header"); -%>
+<!-- breadcrumb-area start -->
+    <div class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb_box text-center">
+                        <h2 class="breadcrumb-title">Contact</h2>
+                        <!-- breadcrumb-list start -->
+                        <ul class="breadcrumb-list">
+                            <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+                            <li class="breadcrumb-item active">Contact</li>
+                        </ul>
+                        <!-- breadcrumb-list end -->
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+    <!-- breadcrumb-area end -->
 
-  <div class="row block-9">
-    <div class="col-md-8">
-      <form action="/contact" method="POST" class="p-4 p-md-5 contact-form">
-       <div class="row">
-        <div class="col-md-6">
-         <div class="form-group">
-          <input type="text" name="name" class="form-control" placeholder="Nom" required="">
+     <div id="main-wrapper">
+        <div class="site-wrapper-reveal">
+            <!--====================  Conact us Section Start ====================-->
+            <div class="contact-us-section-wrappaer section-space--pt_100 section-space--pb_70">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-lg-6">
+                            <div class="conact-us-wrap-one mb-30">
+                                <h3 class="heading">Pour touts renseignements<br> ou autres <br><span class="text-color-primary">contactez nous</span> sur les réseaux sociaux.</h3>
+                                <div class="sub-heading">Nous vous ferons retour le tôt possible.
+                                  <!-- <br> No more than 2 working days since receiving your issue ticket. -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-lg-6">
+                            <div class="contact-form-wrap">
+
+                                <form id="contact-form" action="/contact" method="post">
+                                  <!-- http://whizthemes.com/mail-php/jowel/mitech/php/mail.php -->
+                                    <!-- <form id="contact-form" action="assets/php/mail.php" method="post"> -->
+                                    <div class="contact-form">
+                                        <div class="contact-input">
+                                            <div class="contact-inner">
+                                                <input name="con_name" type="text" required="" placeholder="Nom *">
+                                            </div>
+                                            <div class="contact-inner">
+                                                <input name="con_email" type="email" required="" placeholder="Email *">
+                                            </div>
+                                        </div>
+                                        <div class="contact-inner">
+                                            <input name="con_subject" type="text" required="" placeholder="Objet *">
+                                        </div>
+                                        <div class="contact-inner contact-message">
+                                            <textarea name="con_message" required="" placeholder="Message"></textarea>
+                                        </div> 
+                                        <div class="submit-btn mt-20">
+                                            <button class="ht-btn ht-btn-md" type="submit">ENVOYER</button> 
+                                            <p class="form-messege"></p>
+                                        </div>
+                                    </div> 
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <!-- <div class="full-wrap-map section-space--pt_100"> -->
+                <div class="google-map">
+                    <div id="googleMap-3" class="embed-responsive-item googleMap-3" ></div>
+                    <!-- data-lat="40.730610" data-Long="-73.935242" -->
+                </div>
+            <!-- </div> -->
+
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <input type="text" name="email" class="form-control" placeholder="Email" autocomplete="email" required="">
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="form-group">
-          <input type="text" name="subject" class="form-control" placeholder="Objet" required="">
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="form-group">
-          <textarea id="" name="message" cols="30" rows="7" class="form-control" placeholder="Message" required=""></textarea>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="form-group">
-          <input type="submit"  value="envoyer" class="btn btn-primary py-3 px-5">
-          
-        </div>
-      </div>
+<%- include("partials/footer_footer"); -%>
     </div>
-  </form>
+
+
+
   
-</div>
-
-<div class="col-md-4 d-flex pl-md-5">
- <div class="row">
-   <div class="dbox w-100 d-flex ftco-animate">
-    <div class="icon d-flex align-items-center justify-content-center">
-     <span class="fa fa-map-marker"></span>
-   </div>
-   <div class="text">
-     <p><span>Addresse:</span>Hamdallaye ACI près de la Grande Bougie</p>
-   </div>
- </div>
- <div class="dbox w-100 d-flex ftco-animate">
-  <div class="icon d-flex align-items-center justify-content-center">
-   <span class="fa fa-phone"></span>
- </div>
- <div class="text">
-   <p><span>Téléphone:</span> <a href="tel:44905305">70454445 - 44905305</a></p>
- </div>
-</div>
-<div class="dbox w-100 d-flex ftco-animate">
-  <div class="icon d-flex align-items-center justify-content-center">
-   <span class="fa fa-paper-plane"></span>
- </div>
- <div class="text">
-   <p><span>Email:</span> <a href="mailto:contact.info@malinova.ml">contact.info@malinova.tech</a></p>
- </div>
-</div>
-<div class="dbox w-100 d-flex ftco-animate">
-  <div class="icon d-flex align-items-center justify-content-center">
-   <span class="fa fa-globe"></span>
- </div>
- <div class="text">
-   <p><span>Website</span> <a href="http://www.malinova.ml">malinova.com</a></p>
- </div>
-</div> 
-</div>
-</div>
-<div class="col-md-12">
- <div id="map" class="map"></div>
-</div>
-</div>
-</div>
-</section>	
-		<%- include("partials/footer"); -%>
+<%- include("partials/footer"); -%>

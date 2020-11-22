@@ -1112,6 +1112,7 @@ input[type="checkbox"] {
 ===================================*/
 #googleMap-1, #googleMap-2, #googleMap-3 {
   height: 400px;
+  padding: 20px;
 }
 
 /*=====  End of Default CSS  ======*/

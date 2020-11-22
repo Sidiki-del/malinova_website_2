@@ -59,6 +59,10 @@ MongoClient.connect(
        app.get("/infotechno", function (req, res) {
               res.render("user/index-infotechno");
       });
+      app.get("/team", function (req, res) {
+              res.render("user/team");
+      });
+
 
 
     //    app.get("/blog", function (req, res) {
@@ -185,12 +189,12 @@ MongoClient.connect(
   <p>Vous avez un nouveau message</p>
     <h3>Informations Du Contact</h3>
     <ul>
-        <li>Prénom : ${req.body.name}</li>
-        <li>Email : ${req.body.email}</li>
-        <li>Subject : ${req.body.subject}</li>
+        <li>Prénom : ${req.body.con_name}</li>
+        <li>Email : ${req.body.con_email}</li>
+        <li>Objet : ${req.body.con_subject}</li>
     </ul>
     <h3>Message:</h3>
-    <p>${req.body.message}</p>
+    <p>${req.body.con_message}</p>
   `;
     "use strict";
 
@@ -217,7 +221,7 @@ MongoClient.connect(
 
         // send mail with defined transport object
         let info = await transporter.sendMail({
-            from: req.body.email, // sender address
+            from: req.body.con_email, // sender address
             to: process.env.GMAIL_EMAIL, // list of receivers
             subject: "Message Venant Du Site", // Subject line
             text: "Hello World", // plain text body
@@ -228,7 +232,10 @@ MongoClient.connect(
 
         console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
 
-        res.render('user/successmes');
+        // res.render('user/successmes');
+        res.send(`Votre message a été envoyé avec succès!`);
+ 
+        
     }
 
     main().catch(console.error);    
