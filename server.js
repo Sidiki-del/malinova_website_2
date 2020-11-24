@@ -80,12 +80,14 @@ MongoClient.connect(
     //   });
 
        app.get("/blog", function (req, res) {
-              blog.collection("posts").find().toArray(function(error, posts){
-              posts = posts.reverse();
-              res.render("user/blog", {
-              posts: posts
-            });
-          });
+            //   blog.collection("posts").find().toArray(function(error, posts){
+            //   posts = posts.reverse();
+              res.render("user/blog-list-left-large-image"
+            //   , {
+            //   posts: posts
+            // });
+        //   }
+          );
           
       });
 
