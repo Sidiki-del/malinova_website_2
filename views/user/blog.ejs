@@ -1,67 +1,351 @@
-		<%- include("partials/header"); -%>
+	<%- include("partials/header"); -%>
 
-<!-- END nav -->
-
-<section class="hero-wrap hero-wrap-2" style="background-image: url('/static/user/images/malinova_27.jpg');" data-stellar-background-ratio="0.5">
-  <div class="overlay"></div>
-  <div class="container">
-    <div class="row no-gutters slider-text align-items-end justify-content-start">
-      <div class="col-md-9 ftco-animate pb-5">
-       <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Blog <i class="fa fa-chevron-right"></i></span></p>
-       <h1 class="mb-3 bread">Blog</h1>
-     </div>
-   </div>
- </div>
-</section>
-
-<section class="ftco-section bg-light">
-  <div class="container">
-      <div id="posts">
-			<div class="row d-flex"> 
-            <% posts.forEach(function(post){ %> 
-
-				<div class="col-lg-4 ftco-animate" id="post-<%= post._id %>" >
-					<div class="blog-entry" >
-						<a href="#" class="block-20">
-
-							<% if(post.image){ %>
-                            <img class="img-fluid " src="<%= post.image %>" alt="">
-                            <% } else { %>
-                            <img class="img-fluid " src="http://placehold.it/750x300" alt="">             
-                            <% } %>
-						</a>
-						<div class="text d-block">
-							<div class="meta">
-								<p>
-									<a href="#"><span class="fa fa-calendar mr-2"></span>Aug. 27, 2020</a>
-									<a href="#"><span class="fa fa-user mr-2"></span>Admin</a>
-									<a href="#" class="meta-chat"><span class="fa fa-comment mr-2"></span> 3</a>
-								</p>
-							</div>
-							<h3 class="heading"><a href="#"><%= post.title  %></a></h3>
-							<p><%-post.content.substring(0, 08) + " ..."%></p>
-							<p><a href="admin/posts/<%= post._id %>" class="btn btn-secondary py-2 px-3">Lire plus</a></p>
-						</div>
-					</div>
-				</div>
-				<%  }); %>
-			</div>
-<!-- <div class="row mt-5">
-  <div class="col text-center">
-    <div class="block-27"> 
-      <ul>
-        <li><a href="#" onclick="getPrevious();">&lt;</a></li> -->
-        <!-- <li class="active"><span>1</span></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li> -->
-        <!-- <li><a href="#" onclick="getNext();">&gt;</a></li>
-      </ul>
+    <!-- breadcrumb-area start -->
+    <div class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb_box text-center">
+                        <h2 class="breadcrumb-title">Blog</h2>
+                        <!-- breadcrumb-list start -->
+                        <ul class="breadcrumb-list">
+                            <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+                            <li class="breadcrumb-item active">Blog</li>
+                        </ul>
+                        <!-- breadcrumb-list end -->
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div> -->
-</div>
-</div>
-</section>
-		<%- include("partials/footer"); -%>
+    <!-- breadcrumb-area end -->
+
+
+
+
+
+
+
+
+
+
+
+    <div id="main-wrapper">
+        <div class="site-wrapper-reveal">
+
+
+
+            <!--====================   Blog Area Start ====================-->
+            <div class="blog-pages-wrapper section-space--ptb_100">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-12 order-lg-2 order-1">
+                            <div class="section-title-wrap text-center section-space--mb_60">
+                            </div>
+                            <div class="main-blog-wrap">
+                                <!--======= Single Blog Item Start ========-->
+                                <div class="single-blog-item post-list-wrapper xs-list-blog-item border-bottom wow move-up">
+                                    <div class="row ">
+                                        <div class="col-lg-6">
+                                            <!-- Post Feature Start -->
+                                            <div class="post-feature blog-thumbnail">
+                                                <a href="blog-post-layout-one.html">
+                                                    <img class="img-fluid" src="/static/user/images/blog/blog-01-540x330.jpg" alt="Blog Images">
+                                                </a>
+                                            </div>
+                                            <!-- Post Feature End -->
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <!-- Post info Start -->
+                                            <div class="post-info lg-blog-post-info">
+                                                <h4 class="post-title">
+                                                    <a href="blog-post-layout-one.html">Ideas for High Returns on Investment</a>
+                                                </h4>
+
+                                                <div class="post-meta mt-20">
+                                                   
+                                                    <div class="post-date">
+                                                        <span class="far fa-calendar meta-icon"></span>
+                                                        January 14, 2019
+                                                    </div>
+                                                   
+                                                </div>
+
+                                                <div class="post-excerpt mt-15">
+                                                    <p>Using the profit accumulator is one such way, and you should understand why it increases your chances of the profits. …</p>
+                                                </div>
+
+
+                                                <div class="read-post-share-wrap mt-30">
+                                                    <div class="post-read-more">
+                                                        <a href="blog-post-layout-one.html" class="ht-btn ht-btn-md">Read more </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Post info End -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--===== Single Blog Item End =========-->
+
+                                <!--======= Single Blog Item Start ========-->
+                                <div class="single-blog-item post-list-wrapper xs-list-blog-item border-bottom wow move-up">
+                                    <div class="row ">
+                                        <div class="col-lg-6">
+                                            <!-- Post Feature Start -->
+                                            <div class="post-feature blog-thumbnail">
+                                                <a href="blog-post-layout-one.html">
+                                                    <img class="img-fluid" src="/static/user/images/blog/blog-08-540x330.jpg" alt="Blog Images">
+                                                </a>
+                                            </div>
+                                            <!-- Post Feature End -->
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <!-- Post info Start -->
+                                            <div class="post-info lg-blog-post-info">
+                                                <h4 class="post-title">
+                                                    <a href="blog-post-layout-one.html">How Technology Made Businesses More Efficient</a>
+                                                </h4>
+
+                                                <div class="post-meta mt-20">
+                                                    <div class="post-author">
+                                                        <a href="#">
+                                                            <img class="img-fluid avatar-96" src="/static/user/images/team/admin.jpg" alt=""> James Scott
+                                                        </a>
+                                                    </div>
+                                                    <div class="post-date">
+                                                        <span class="far fa-calendar meta-icon"></span>
+                                                        January 14, 2019
+                                                    </div>
+                                                    <div class="post-view">
+                                                        <span class="meta-icon far fa-eye"></span>
+                                                        346 views
+                                                    </div>
+                                                </div>
+
+                                                <div class="post-excerpt mt-15">
+                                                    <p>Using the profit accumulator is one such way, and you should understand why it increases your chances of the profits. …</p>
+                                                </div>
+
+
+                                                <div class="read-post-share-wrap mt-30">
+                                                    <div class="post-read-more">
+                                                        <a href="blog-post-layout-one.html" class="ht-btn ht-btn-md">Read more </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Post info End -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--===== Single Blog Item End =========-->
+
+                                <!--======= Single Blog Item Start ========-->
+                                <div class="single-blog-item post-list-wrapper xs-list-blog-item border-bottom wow move-up">
+                                    <div class="row ">
+                                        <div class="col-lg-6">
+                                            <!-- Post Feature Start -->
+                                            <div class="post-feature blog-thumbnail">
+                                                <a href="blog-post-layout-one.html">
+                                                    <img class="img-fluid" src="assets/images/blog/blog-07-540x330.html" alt="Blog Images">
+                                                </a>
+                                            </div>
+                                            <!-- Post Feature End -->
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <!-- Post info Start -->
+                                            <div class="post-info lg-blog-post-info">
+                                                <h4 class="post-title">
+                                                    <a href="blog-post-layout-one.html">Data Secure on Transitioning to a New Office</a>
+                                                </h4>
+
+                                                <div class="post-meta mt-20">
+                                                    <div class="post-author">
+                                                        <a href="#">
+                                                            <img class="img-fluid avatar-96" src="assets/images/team/admin-02.jpg" alt=""> James Scott
+                                                        </a>
+                                                    </div>
+                                                    <div class="post-date">
+                                                        <span class="far fa-calendar meta-icon"></span>
+                                                        January 14, 2019
+                                                    </div>
+                                                    <div class="post-view">
+                                                        <span class="meta-icon far fa-eye"></span>
+                                                        346 views
+                                                    </div>
+                                                </div>
+
+                                                <div class="post-excerpt mt-15">
+                                                    <p>Using the profit accumulator is one such way, and you should understand why it increases your chances of the profits. …</p>
+                                                </div>
+
+
+                                                <div class="read-post-share-wrap mt-30">
+                                                    <div class="post-read-more">
+                                                        <a href="blog-post-layout-one.html" class="ht-btn ht-btn-md">Read more </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Post info End -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--===== Single Blog Item End =========-->
+
+                                <!--======= Single Blog Item Start ========-->
+                                <div class="single-blog-item post-list-wrapper xs-list-blog-item border-bottom wow move-up">
+                                    <div class="row ">
+                                        <div class="col-lg-6">
+                                            <!-- Post Feature Start -->
+                                            <div class="post-feature blog-thumbnail">
+                                                <a href="blog-post-layout-one.html">
+                                                    <img class="img-fluid" src="assets/images/blog/blog-05-540x330.jpg" alt="Blog Images">
+                                                </a>
+                                            </div>
+                                            <!-- Post Feature End -->
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <!-- Post info Start -->
+                                            <div class="post-info lg-blog-post-info">
+                                                <h4 class="post-title">
+                                                    <a href="blog-post-layout-one.html">Blockchain Technology Effects on Logistics Sector?</a>
+                                                </h4>
+
+                                                <div class="post-meta mt-20">
+                                                    <div class="post-author">
+                                                        <a href="#">
+                                                            <img class="img-fluid avatar-96" src="assets/images/team/admin.jpg" alt=""> James Scott
+                                                        </a>
+                                                    </div>
+                                                    <div class="post-date">
+                                                        <span class="far fa-calendar meta-icon"></span>
+                                                        January 14, 2019
+                                                    </div>
+                                                    <div class="post-view">
+                                                        <span class="meta-icon far fa-eye"></span>
+                                                        346 views
+                                                    </div>
+                                                </div>
+
+                                                <div class="post-excerpt mt-15">
+                                                    <p>Using the profit accumulator is one such way, and you should understand why it increases your chances of the profits. …</p>
+                                                </div>
+
+
+                                                <div class="read-post-share-wrap mt-30">
+                                                    <div class="post-read-more">
+                                                        <a href="blog-post-layout-one.html" class="ht-btn ht-btn-md">Read more </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Post info End -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--===== Single Blog Item End =========-->
+
+                                <!--======= Single Blog Item Start ========-->
+                                <div class="single-blog-item post-list-wrapper xs-list-blog-item border-bottom wow move-up">
+                                    <div class="row ">
+                                        <div class="col-lg-6">
+                                            <!-- Post Feature Start -->
+                                            <div class="post-feature blog-thumbnail">
+                                                <a href="blog-post-layout-one.html">
+                                                    <img class="img-fluid" src="assets/images/blog/blog-02-540x330.jpg" alt="Blog Images">
+                                                </a>
+                                            </div>
+                                            <!-- Post Feature End -->
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <!-- Post info Start -->
+                                            <div class="post-info lg-blog-post-info">
+                                                <h4 class="post-title">
+                                                    <a href="blog-post-layout-one.html">How Wireless Technology is Changing Business</a>
+                                                </h4>
+
+                                                <div class="post-meta mt-20">
+                                                    <div class="post-author">
+                                                        <a href="#">
+                                                            <img class="img-fluid avatar-96" src="assets/images/team/admin-02.jpg" alt=""> James Scott
+                                                        </a>
+                                                    </div>
+                                                    <div class="post-date">
+                                                        <span class="far fa-calendar meta-icon"></span>
+                                                        January 14, 2019
+                                                    </div>
+                                                    <div class="post-view">
+                                                        <span class="meta-icon far fa-eye"></span>
+                                                        346 views
+                                                    </div>
+                                                </div>
+
+                                                <div class="post-excerpt mt-15">
+                                                    <p>Using the profit accumulator is one such way, and you should understand why it increases your chances of the profits. …</p>
+                                                </div>
+
+
+                                                <div class="read-post-share-wrap mt-30">
+                                                    <div class="post-read-more">
+                                                        <a href="blog-post-layout-one.html" class="ht-btn ht-btn-md">Read more </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Post info End -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--===== Single Blog Item End =========-->
+
+                                <div class="ht-pagination mt-30 pagination justify-content-center">
+                                    <div class="pagination-wrapper">
+                                        <ul class="page-pagination">
+                                            <li><a class="prev page-numbers" href="#">Prev</a></li>
+                                            <li><a class="page-numbers current" href="#">1</a></li>
+                                            <li><a class="page-numbers" href="#">2</a></li>
+                                            <li><a class="next page-numbers" href="#">Next</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--====================  Blog Area End  ====================-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div> 
+
+        <!--====================  footer area ====================-->
+	<%- include("partials/footer_footer"); -%>
+       
+        <!--====================  End of footer area  ====================-->
+
+
+    </div>
+	<%- include("partials/footer"); -%>
+    

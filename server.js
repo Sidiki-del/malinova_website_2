@@ -79,17 +79,17 @@ MongoClient.connect(
           
     //   });
 
-       app.get("/blog", function (req, res) {
+    //    app.get("/blog", function (req, res) {
             //   blog.collection("posts").find().toArray(function(error, posts){
             //   posts = posts.reverse();
-              res.render("user/blog-list-left-large-image"
+            //   res.render("user/blog-list-left-large-image"
             //   , {
             //   posts: posts
             // });
         //   }
-          );
+        //   );
           
-      });
+    //   });
 
 
     // app.get('/', function(req, res){
@@ -104,9 +104,9 @@ MongoClient.connect(
           res.render('user/blog-single');
       });
 
-    //   app.get('/blog', function(req, res){
-    //       res.render('user/blog');
-    //   });
+      app.get('/blog', function(req, res){
+          res.render('user/blog');
+      });
 
       app.get('/contact', function(req, res){
           res.render('user/contact');
