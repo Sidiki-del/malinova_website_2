@@ -9,6 +9,8 @@ const io = require("socket.io")(http);
 const formidable = require('formidable');
 const fs = require('fs');
 const colors = require('colors');
+const translate = require('@vitalets/google-translate-api');
+
 
 const session = require('express-session');
 app.use(
@@ -63,21 +65,33 @@ MongoClient.connect(
               res.render("user/team");
       });
 
+    // Translator
+app.post('/speechtranslator',(req,res) => {
+
+//   console.log(req.body.speech)
+
+  translate(req.body.speech, {to: req.body.language}).then(response => {
+    res.render('speechtranslator')
+}).catch(err => {
+    console.error(err);
+});
+
+})
 
 
-    //    app.get("/blog", function (req, res) {
-    //       blog.collection("settings").findOne({}, function(error, settings){
-    //           var postLimit = parseInt(settings.post_limit);
-    //           blog.collection("posts").find().sort({"_id": -1}).limit(postLimit).toArray(function(error, posts){
-    //           posts = posts.reverse();
-    //           res.render("user/blog", {
-    //           posts: posts,
-    //           "postLimit": postLimit
-    //         });
-    //       });
-    //        });
+       app.get("/blog", function (req, res) {
+          blog.collection("settings").findOne({}, function(error, settings){
+              var postLimit = parseInt(settings.post_limit);
+              blog.collection("posts").find().sort({"_id": -1}).limit(postLimit).toArray(function(error, posts){
+              posts = posts.reverse();
+              res.render("user/blog", {
+              posts: posts,
+              "postLimit": postLimit
+            });
+          });
+           });
           
-    //   });
+      });
 
     //    app.get("/blog", function (req, res) {
             //   blog.collection("posts").find().toArray(function(error, posts){
@@ -104,9 +118,9 @@ MongoClient.connect(
           res.render('user/blog-single');
       });
 
-      app.get('/blog', function(req, res){
-          res.render('user/blog');
-      });
+    //   app.get('/blog', function(req, res){
+    //       res.render('user/blog');
+    //   });
 
       app.get('/contact', function(req, res){
           res.render('user/contact');
@@ -185,7 +199,7 @@ MongoClient.connect(
           }
            
        });
-       app.post("/contact", function (req, res) {
+app.post("/contact", function (req, res) {
 
     const output = `
   <p>Vous avez un nouveau message</p>
@@ -208,15 +222,16 @@ MongoClient.connect(
 
         // create reusable transporter object using the default SMTP transport
         let transporter = nodemailer.createTransport({
-            // host: "smtp.ethereal.email",
-            // port: 587,
-            // secure: false, // true for 465, false for other ports
-            service: "gmail",
+            host: "mail.malinova.tech",
+            port: 465,
+            secure: true, // true for 465, false for other ports
+            transportMethod: 'SMTP',
             auth: {
                 user: process.env.GMAIL_EMAIL, // generated ethereal user
                 pass: process.env.GMAIL_PASS // generated ethereal password
             },
-            tls: {
+            // ,
+            tls: { 
                 rejectUnauthorized: false
             } 
         });
@@ -225,7 +240,7 @@ MongoClient.connect(
         let info = await transporter.sendMail({
             from: req.body.con_email, // sender address
             to: process.env.GMAIL_EMAIL, // list of receivers
-            subject: "Message Venant Du Site", // Subject line
+            subject: "Message Venant Du Site Web", // Subject line
             text: "Hello World", // plain text body
             html: output, // html body
         });

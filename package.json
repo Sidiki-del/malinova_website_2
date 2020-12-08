@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Sidiki-del/blog_1#readme",
   "dependencies": {
+    "@vitalets/google-translate-api": "^4.0.0",
     "body-parser": "^1.19.0",
     "colors": "^1.4.0",
     "concurrently": "^5.3.0",
