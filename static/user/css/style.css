@@ -3709,7 +3709,7 @@ input[type="checkbox"] {
 }
 
 .megamenu--mega > li > ul > li > a:hover {
-  color: #086AD8;
+  color:  #e85d04;
 }
 
 .megamenu--mega > li > ul > li > a:hover span:after {
@@ -3731,14 +3731,14 @@ input[type="checkbox"] {
   left: auto;
   right: 0;
   z-index: -1;
-  background-color: #086AD8;
+  background-color: #e85d04;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
 }
 
 .megamenu--mega > li > ul > li.active > a {
-  color: #086AD8;
+  color: #e85d04;
 }
 
 .container-fluid .megamenu--mega {
