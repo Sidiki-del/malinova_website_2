@@ -37,8 +37,8 @@ app.set("view engine", "ejs");
  
 var MongoClient = require('mongodb').MongoClient; 
 MongoClient.connect(
-  "mongodb://localhost:27017",
-//    process.env.DATABASE,
+//    process.env.DATABASE_LOCAL, 
+   process.env.DATABASE, 
   {useNewUrlParser: true,
   useUnifiedTopology: true
 }, function(error, client){

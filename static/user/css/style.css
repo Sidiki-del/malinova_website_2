@@ -3709,7 +3709,7 @@ input[type="checkbox"] {
 }
 
 .megamenu--mega > li > ul > li > a:hover {
-  color:  #e85d04;
+  color: #086AD8;
 }
 
 .megamenu--mega > li > ul > li > a:hover span:after {
@@ -3731,14 +3731,14 @@ input[type="checkbox"] {
   left: auto;
   right: 0;
   z-index: -1;
-  background-color: #e85d04;
+  background-color: #086AD8;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
 }
 
 .megamenu--mega > li > ul > li.active > a {
-  color: #e85d04;
+  color: #086AD8;
 }
 
 .container-fluid .megamenu--mega {
@@ -10623,7 +10623,7 @@ ol {
 }
 
 .projects-wrap.style-01 .content .post-categories {
-  color: #086AD8;
+  color: #e85d04;
   margin-bottom: 2px;
 }
 
@@ -10644,11 +10644,11 @@ ol {
   font-size: 14px;
   font-weight: 500;
   border-top: 1px solid #eee;
-  color: #086AD8;
+  color: #e85d04;
 }
 
 .projects-wrap.style-01 .content .box-projects-arrow::before {
-  background-color: #086AD8;
+  background-color: #e85d04;
   content: '';
   position: absolute;
   top: 0;
@@ -11434,12 +11434,12 @@ ol {
   font-size: 14px;
   font-weight: 500;
   border-top: 1px solid #eee;
-  color: #086AD8;
+  color: #e85d04;
   display: block;
 }
 
 .single-blog-item .post-read-more .btn-read-more::before {
-  background: #086AD8;
+  background: #e85d04;
   content: '';
   position: absolute;
   top: 0;
