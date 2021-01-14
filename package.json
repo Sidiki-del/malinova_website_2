@@ -13,6 +13,9 @@
   },
   "author": "Sidiki Issa Diarr\t\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Da",
   "license": "ISC",
+  "engines": {
+    "node": "14.15.4"
+  },
   "bugs": {
     "url": "https://github.com/Sidiki-del/blog_1/issues"
   },
@@ -30,9 +33,11 @@
     "express-session": "^1.17.1",
     "formidable": "^1.2.2",
     "mongodb": "^3.6.2",
+    "netlify-lambda": "^2.0.2",
     "nodemailer": "^6.4.13",
     "prettier": "^2.1.2",
     "sass": "^1.27.0",
+    "serverless-http": "^2.6.0",
     "socket.io": "^2.3.0"
   }
 }
